@@ -1,0 +1,3 @@
+packrat::init()
+setwd("~/Nicholas/Dev/R/DataScienceCoursera/Getting and Cleaning Data")
+packrat::init()

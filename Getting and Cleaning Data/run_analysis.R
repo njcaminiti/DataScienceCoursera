@@ -56,3 +56,4 @@ Final <- group_by(Trimmed, Subject, Activity) %>%
 print(Final)        
 View(Final)
 
+write.csv(Final, file = "./finaltidy.txt")

@@ -1,12 +1,12 @@
 ##install packages if needed
-#install.packages("dplyr", "data.table", "tidyr")
-#library(dplyr, data.table, tidyr)
+#install.packages("data.table", dplyr", "tidyr")
+library(data.table, dplyr, tidyr)
 
 ###We must first retrieve the data that we will be working with
-#url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
-#download.file(url, destfile="./MotionStudy.zip")
-#unzip("MotionStudy.zip") 
-#file.remove("./MotionStudy.zip")
+url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+download.file(url, destfile="./MotionStudy.zip")
+unzip("MotionStudy.zip") 
+file.remove("./MotionStudy.zip")
 
 ### We will need these to label our data once we've extracted it 
 activity_labels <- fread("./UCI HAR Dataset/activity_labels.txt")
@@ -81,6 +81,6 @@ Final <- group_by(Trimmed, Subject, Activity) %>%
         select(-Condition) %>% 
         summarize_all(mean) %>%
         arrange(as.numeric(as.character(Subject)))
-        
+print(Final)        
 View(Final)
 

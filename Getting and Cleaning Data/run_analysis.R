@@ -56,4 +56,4 @@ Final <- group_by(Trimmed, Subject, Activity) %>%
 print(Final)        
 View(Final)
 
-write.csv(Final, file = "./finaltidy.txt")
+write.table(Final, file = "./finaltidy.txt", row.names = FALSE)

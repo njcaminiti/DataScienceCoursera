@@ -49,4 +49,4 @@ Now we have only our relevant data, and we are tasked to create a second, indepe
 So in order to **Establish groupings and calculate means by Subject and Activity$**, we can simply use the group_by() and summarize() functions built into the dplyr package, which is precisely what we do in lines 52-54.  
 Line 55 simply arranges the data according to subject ID to make it "prettier". 
 
-Finally, lines 56/57 displays the final dataset in two different ways, and line 58 writes this new dataset to a .txt file, with each entry separated by a single space [which is the default behavior for write.csv()].  
+Finally, lines 56/57 displays the final dataset in two different ways, and line 58 writes this new dataset to a .txt file, with each entry separated by a single space [which is the default behavior for write.table()].  

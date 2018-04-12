@@ -1,7 +1,7 @@
-# DataScienceCoursera
 
 This is the README file for the "Getting and Cleaning Data" course project.
 -------------------------------------------------------------------
+This is a demonstration of data wrangling in R. 
 
 1) SETTING THE STAGE
 Lines 1 & 2 Ensure that we have installed and loaded the R packages required to run our analysis.

@@ -1,8 +1,11 @@
 ## This is a demonstration of data wrangling in R.
 
-_Raw datasets with descriptions are located within the UCI folder and subfolders_
-This dataset contains the raw output from an experiment in Human Activity Recognition using smartphone accelerometer and gyroscope functionality. This data, contained in 24 raw text files, represents 561 features measured over 10,000 observations; over 5.5 million individual measurements.    
-__run_analysis.R__ processes the data files contained in the UCI folder, ultimately producing a subset of this data in an analysis-friendly, 'tidy' format as its output: __FinalTidy.txt__
+The UCI dataset contains Human Activity Recognition data gathered using smartphone accelerometer and gyroscope functionality. 
+This data, contained in 24 raw text files, represents 561 features measured over 10,000 observations. (over 5.5 million individual measurements)    
+
+__*Raw datasets with descriptions are located within the UCI folder and subfolders*__
+
+__run_analysis.R__ processes the UCI data and outputs a subset of this data in a 'tidy', analysis-friendly format: __FinalTidy.txt__
 
 
 ### 1) SETTING THE STAGE

@@ -1,9 +1,12 @@
+# This script does not include inline comments. Please see README.md for a
+# walkthrough. Please see codebook.md for information on the datasets used.
+
 install.packages("data.table", "dplyr", "tidyr")
 library(data.table, dplyr, tidyr)
 
 url <- "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 download.file(url, destfile="./MotionStudy.zip")
-unzip("MotionStudy.zip") 
+unzip("MotionStudy.zip")
 file.remove("./MotionStudy.zip")
 
 activity_labels <- fread("./UCI HAR Dataset/activity_labels.txt")
@@ -17,7 +20,7 @@ testActivity <- fread("./UCI HAR Dataset/test/y_test.txt",
 testDat<- fread("./UCI HAR Dataset/test/X_test.txt")
 colnames(testDat) = feature_labels$V2
 
-TEST <- cbind(testID, testActivity, testDat) 
+TEST <- cbind(testID, testActivity, testDat)
   row.names(TEST) = paste("Test", 1:2947, sep = "")
   rm(testActivity, testDat, testID)
 
@@ -41,19 +44,19 @@ names(ALL) <- make.names(names(ALL), unique = TRUE, allow_ = TRUE)
 
 Trimmed <- ALL %>%
         select(-contains("angle")) %>%
-        select(Subject, Condition, Activity, 
+        select(Subject, Condition, Activity,
                contains("mean.."), contains("std.."))
 
 names(Trimmed) <- gsub("\\.\\.", "\\(\\)", names(Trimmed))
 names(Trimmed) <- gsub("\\(\\)\\.", "\\(\\)\\-", names(Trimmed))
 
-levels(Trimmed$Activity) <- as.character(activity_labels$V2) 
+levels(Trimmed$Activity) <- as.character(activity_labels$V2)
 
 Final <- group_by(Trimmed, Subject, Activity) %>%
-        select(-Condition) %>% 
+        select(-Condition) %>%
         summarize_all(mean) %>%
         arrange(as.numeric(as.character(Subject)))
-print(Final)        
+print(Final)
 View(Final)
 
 write.table(Final, file = "./finaltidy.txt", row.names = FALSE)

@@ -1,4 +1,4 @@
-## This is a demonstration of data wrangling in R.
+## This is a demonstration of basic data wrangling in R.
 
 The UCI dataset contains Human Activity Recognition data gathered using smartphone accelerometer and gyroscope functionality. 
 This data, contained in 24 raw text files, represents 561 features measured over 10,000 observations. (over 5.5 million individual measurements)    
